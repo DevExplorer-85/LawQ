@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lawyer Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">Lawyer Hub</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register-enhanced.html">Register</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="lawyerDirectory.html">Lawyer Directory</a></li>
+                <li><a href="caseStudies.html">Case Studies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="p-4">
+        <h2 class="text-xl">Register</h2>
+        <div class="mt-4">
+            <h3 class="text-lg">Select User Type:</h3>
+            <div class="flex space-x-4">
+                <button id="lawyerBtn" class="bg-blue-600 text-white rounded p-2">Lawyer</button>
+                <button id="publicBtn" class="bg-blue-600 text-white rounded p-2">Public User</button>
+            </div>
+        </div>
+        <form id="registrationForm" class="mt-4" onsubmit="return validateForm()">
+            <div id="lawyerFields" class="hidden">
+                <h3 class="text-lg">Lawyer Registration</h3>
+                <div class="mb-4">
+                    <label for="lawyerName" class="block text-gray-700">Full Name:</label>
+                    <input type="text" id="lawyerName" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="lawyerEmail" class="block text-gray-700">Email:</label>
+                    <input type="email" id="lawyerEmail" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="lawyerPhone" class="block text-gray-700">Phone:</label>
+                    <input type="tel" id="lawyerPhone" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="licenseNumber" class="block text-gray-700">License Number:</label>
+                    <input type="text" id="licenseNumber" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="experience" class="block text-gray-700">Years of Experience:</label>
+                    <input type="number" id="experience" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="casesFought" class="block text-gray-700">Number of Cases Fought:</label>
+                    <input type="number" id="casesFought" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="lawyerAddress" class="block text-gray-700">Address:</label>
+                    <input type="text" id="lawyerAddress" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="lawyerDocuments" class="block text-gray-700">Upload Documents:</label>
+                    <input type="file" id="lawyerDocuments" class="border rounded w-full p-2" required>
+                </div>
+            </div>
+            <div id="publicFields" class="hidden">
+                <h3 class="text-lg">Public User Registration</h3>
+                <div class="mb-4">
+                    <label for="userName" class="block text-gray-700">Full Name:</label>
+                    <input type="text" id="userName" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="userEmail" class="block text-gray-700">Email:</label>
+                    <input type="email" id="userEmail" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="userPhone" class="block text-gray-700">Phone:</label>
+                    <input type="tel" id="userPhone" class="border rounded w-full p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="userAddress" class="block text-gray-700">Address:</label>
+                    <input type="text" id="userAddress" class="border rounded w-full p-2" required>
+                </div>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white rounded p-2">Register</button>
+        </form>
+    </main>
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        <p>&copy; 2023 Lawyer Hub. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('lawyerBtn').onclick = function() {
+            document.getElementById('lawyerFields').classList.remove('hidden');
+            document.getElementById('publicFields').classList.add('hidden');
+        };
+        document.getElementById('publicBtn').onclick = function() {
+            document.getElementById('publicFields').classList.remove('hidden');
+            document.getElementById('lawyerFields').classList.add('hidden');
+        };
+
+        function validateForm() {
+            // Add any additional validation logic here if needed
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
